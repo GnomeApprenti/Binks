@@ -10,12 +10,5 @@ body{
 div{
   margin: 50px 10% 20px;;
   padding: auto;
-  background-color: rgb(39,42,43);
-}
-p{
-  text-align: center;
-  color: gray;
-  font-family: sans-serif;
-  font-size: 50;
-  margin: auto;
+  background-color: rgb(7 ,10 ,10);
 }
