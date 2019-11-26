@@ -109,26 +109,15 @@ logo15.onload = function() {
 }
 logo15.src = "src/images/logo15.jpg";
 
-ctx.fillRect(75, 75, 1370, 150);
-ctx.fillRect(75, 250, 1370, 150);
-ctx.fillRect(75, 425, 1370, 150);
-ctx.fillRect(75, 600, 1370, 150);
-ctx.fillRect(75, 775, 1370, 150);
-ctx.fillRect(75, 950, 1370, 150);
-ctx.fillRect(75, 1125, 1370, 150);
-ctx.fillRect(75, 1300, 1370, 150);
-ctx.fillRect(75, 1475, 1370, 150);
-ctx.fillRect(75, 1650, 1370, 150);
-ctx.fillRect(75, 1825, 1370, 150);
-ctx.fillRect(75, 2000, 1370, 150);
-ctx.fillRect(75, 2175, 1370, 150);
-ctx.fillRect(75, 2350, 1370, 150);
-ctx.fillRect(75, 2525, 1370, 150);
+for (i=75; i <= 2525; i += 175){
+  ctx.fillRect(75, i, 1370, 150);
+}
 
 //détécteur de click
 function onDown(event){
   cx = event.pageX-canvas.offsetLeft;
-  cy = event.pageY-canvas.offsetTop-canvas.scrollTop;
+  cy = event.pageY-canvas.offsetTop+canvas.scrollTop;
+
   if(cx > 100 && cx < 200 && cy > 100 && cy < 200){
     alert('lancer chanson 1');
   }
