@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+    <title>NSI</title>
+
+    <style>     * { padding: 0; margin: 0; }
+     canvas { background: #eee; display: block; margin: 100 auto; }
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>BINKS</h1>
+    <h2>par leith et louis</h2>
+
+    <div class = "espaceMusique" ><img class = "logoMusique" src="src/images/logo1.jpg" onclick="play('musique1')"/>
+        <div id = barreProgression>
+          <audio id='musique1' ontimeupdate="update(this)">
+            <source src = "src/sons/musique1.wav">
+          </audio>
+        </div>
+        <span id="progression">0:00</span>
+        <span id="titre">binks</span>
+        <span id="total">3:50</span>
+        <button id="boutonP10" type="button" onclick="boutonP('musique1')">+10s</button>
+        <button id="boutonM10" type="button" onclick="boutonM('musique1')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo2.jpg" onclick="play('musique2')"/>
+        <div id = barreProgression>
+          <audio id='musique2' ontimeupdate="update(this)" >
+            <source src = "src/sons/musique2.wav">
+          </audio>
+        </div>
+          <span id="progression">0:00</span>
+          <span id="titre">50e</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique2')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique2')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo3.jpg" onclick="play('musique3') "/>
+      <div id = barreProgression>
+        <audio id='musique3' ontimeupdate="update(this)">
+          <source src = "src/sons/musique3.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">air max</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique3')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique3')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo4.jpg" onclick="play('musique4')"/>
+      <div id = barreProgression>
+        <audio id='musique4' ontimeupdate="update(this)">
+          <source src = "src/sons/musique4.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">rainté</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique4')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique4')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo5.jpg" onclick="play('musique5')"/>
+      <div id = barreProgression>
+        <audio id='musique5' ontimeupdate="update(this)">
+          <source src = "src/sons/musique5.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">zebi</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique5')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique5')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo6.jpg" onclick="play('musique6')"/>
+      <div id = barreProgression>
+        <audio id='musique6' ontimeupdate="update(this)">
+          <source src = "src/sons/musique6.wav">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">baceux</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique6')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique6')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo7.jpg" onclick="play('musique7')"/>
+      <div id = barreProgression>
+        <audio id='musique7' ontimeupdate="update(this)">
+          <source src = "src/sons/musique7.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">délit de comparution</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique7')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique7')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo8.jpg" onclick="play('musique8')"/>
+      <div id = barreProgression>
+        <audio id='musique8' ontimeupdate="update(this)">
+          <source src = "src/sons/musique8.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">perquiz</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique8')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique8')">-10s</button>
+   </div>
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo9.jpg" onclick="play('musique9')"/>
+      <div id = barreProgression>
+        <audio id='musique9' ontimeupdate="update(this)">
+          <source src = "src/sons/musique9.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">gav</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique9')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique9')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo10.jpg" onclick="play('musique10')"/>
+      <div id = barreProgression>
+        <audio id='musique10' ontimeupdate="update(this)">
+          <source src = "src/sons/musique10.wav">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">kfc</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique10')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique10')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo11.jpg" onclick="play('musique11')"/>
+      <div id = barreProgression>
+        <audio id='musique11' ontimeupdate="update(this)">
+          <source src = "src/sons/musique11.wav">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">barry</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique11')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique11')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo12.jpg" onclick="play('musique12')"/>
+      <div id = barreProgression>
+        <audio id='musique12' ontimeupdate="update(this)">
+          <source src = "src/sons/musique12.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">jamel</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique12')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique12')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo13.jpg" onclick="play('musique13')"/>
+      <div id = barreProgression>
+        <audio id='musique13' ontimeupdate="update(this)">
+          <source src = "src/sons/musique13.wav">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">lester</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique13')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique13')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo14.jpg" onclick="play('musique14')"/>
+      <div id = barreProgression>
+        <audio id='musique14' ontimeupdate="update(this)">
+          <source src = "src/sons/musique14.wav">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">ladeb</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique14')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique14')">-10s</button>
+    </div>
+
+    <div class = "espaceMusique"><img class = "logoMusique" src="src/images/logo15.jpg" onclick="play('musique15')"/>
+      <div id = barreProgression>
+        <audio id='musique15' ontimeupdate="update(this)">
+          <source src = "src/sons/musique15.mp3">
+        </audio>
+      </div>
+          <span id="progression">0:00</span>
+          <span id="titre">sointé</span>
+          <span id="total">3:50</span>
+          <button id="boutonP10" type="button" onclick="boutonP('musique15')">+10s</button>
+          <button id="boutonM10" type="button" onclick="boutonM('musique15')">-10s</button>
+    </div>
+
+
+    <script src="script.js"></script>
+
+  <footer>
+      <nav>
+          <ul>
+            <li class="binks1">
+              <img  class= "style_footer" src="src/images/insta.png">
+              <a href="https://www.instagram.com/lw1.grl/?hl=fr">@lw1.grl"
+              </a>
+            </li>
+            <li class="binks1">
+              <img  class="style_footer" src="src/images/soundcloud.png">
+              <a href="https://soundcloud.com/louis-grignola">@soundcloud
+            </a>
+            </li>
+            <li class="binks1">
+              <img class="style_footer" src="src/images/mail.png">
+              <a href="mailto:louisgrignola0108@gmail.com">contatez nous!
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </p>
+  </footer>
+
+  </body>
+</html>
