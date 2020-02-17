@@ -1,7 +1,5 @@
 # Binks
-Site du Binks 
+Site du Binks
 
-Liste des tâches : 
--Améliorer l'apparence du site
--Ajouter les musiques
+Liste des tâches :
 -Créer le mini jeu
