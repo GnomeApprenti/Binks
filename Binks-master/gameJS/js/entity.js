@@ -71,10 +71,9 @@ Update = function (){
 
 Start = function(){
 
-Entity( 350, 150, 100, 200, 'kaaris', 12, 12, 'idKaaris');
-Entity(150, 150, 100, 200, 'booba', 10, 10, 'idBooba'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+  ctx.clearRect(0,0,WIDTH,HEIGHT);
+  Entity( 375, 375, 100, 200, 'kaaris', 8, 8, 'idKaaris');
+  Entity(150, 375, 100, 200, 'booba', 8, 8, 'idBooba'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+  setInterval(Update,40);
 
 }
-
-setInterval(Update,40);
-Start();
