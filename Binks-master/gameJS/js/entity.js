@@ -56,6 +56,7 @@ UpdateEntity = function (entity){
 
   DrawEntity(entity);
   UpdateEntityPosition(entity);
+  UpdateCollisions(entity);
 
 
 }
@@ -72,8 +73,8 @@ Update = function (){
 Start = function(){
 
   ctx.clearRect(0,0,WIDTH,HEIGHT);
-  Entity( 375, 375, 100, 200, 'kaaris', 8, 8, 'idKaaris');
-  Entity(150, 375, 100, 200, 'booba', 8, 8, 'idBooba'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+  Entity( 375, 375, 100, 200, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+  Entity(150, 375, 100, 200, 'booba', 15, 15, 'idBooba');
   setInterval(Update,40);
 
 }
