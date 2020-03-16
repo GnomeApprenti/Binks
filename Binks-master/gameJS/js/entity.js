@@ -1,4 +1,4 @@
-//constructor
+//constructor joueurs
 let listeJoueurs = {};
 
 Entity = function (x, y, sizeX, sizeY, nom, vitX, vitY, id){
@@ -36,22 +36,28 @@ DrawEntity = function (entity){
 
 }
 
+//mise à jour des posititons des joueurs
 UpdateEntityPosition = function (entity){
 
+  //haut
   if (entity.haut)
     entity.y -= entity.vitY
 
+  //bas
   if (entity.bas)
     entity.y += entity.vitY
 
+  //gauche
   if (entity.gauche)
     entity.x -= entity.vitY
 
+  //droite
   if (entity.droite)
     entity.x += entity.vitY
 
 }
 
+//mise à jour des entités
 UpdateEntity = function (entity){
 
   DrawEntity(entity);
@@ -61,6 +67,7 @@ UpdateEntity = function (entity){
 
 }
 
+//update
 Update = function (){
 
   ctx.clearRect(0,0,WIDTH,HEIGHT);
@@ -70,6 +77,7 @@ Update = function (){
 
 }
 
+//lancement du jeu
 Start = function(){
 
   ctx.clearRect(0,0,WIDTH,HEIGHT);
