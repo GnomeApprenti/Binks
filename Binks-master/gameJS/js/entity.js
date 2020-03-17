@@ -23,6 +23,8 @@ Entity = function (x, y, sizeX, sizeY, nom, vitX, vitY, id){
     gauche:false,
     droite:false,
 
+    attaque:false,
+
   };
 
   listeJoueurs[id] = joueur;
@@ -38,23 +40,23 @@ DrawEntity = function (entity){
 
 //mise à jour des posititons des joueurs
 UpdateEntityPosition = function (entity){
+  if(etat == 1){
+    //haut
+    if (entity.haut)
+      entity.y -= entity.vitY
 
-  //haut
-  if (entity.haut)
-    entity.y -= entity.vitY
+    //bas
+    if (entity.bas)
+      entity.y += entity.vitY
 
-  //bas
-  if (entity.bas)
-    entity.y += entity.vitY
+    //gauche
+    if (entity.gauche)
+      entity.x -= entity.vitY
 
-  //gauche
-  if (entity.gauche)
-    entity.x -= entity.vitY
-
-  //droite
-  if (entity.droite)
-    entity.x += entity.vitY
-
+    //droite
+    if (entity.droite)
+      entity.x += entity.vitY
+ }
 }
 
 //mise à jour des entités
@@ -75,14 +77,19 @@ Update = function (){
     UpdateEntity(listeJoueurs[i]);
   }
 
+  Pause();
+
 }
 
 //lancement du jeu
 Start = function(){
 
-  ctx.clearRect(0,0,WIDTH,HEIGHT);
-  Entity( 375, 375, 100, 200, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
-  Entity(150, 375, 100, 200, 'booba', 15, 15, 'idBooba');
-  setInterval(Update,40);
+  if(etat == 0){
+    ctx.clearRect(0,0,WIDTH,HEIGHT);
+    Entity( 375, 375, 100, 200, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+    Entity(150, 375, 100, 200, 'booba', 15, 15, 'idBooba');
+    setInterval(Update,40);
+    etat = 1;
+  }
 
 }
