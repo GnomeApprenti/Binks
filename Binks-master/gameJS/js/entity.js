@@ -34,7 +34,13 @@ Entity = function (x, y, sizeX, sizeY, nom, vitX, vitY, id){
 //affichage des entités
 DrawEntity = function (entity){
 
-    ctx.fillRect(entity.x, entity.y, entity.sizeX, entity.sizeY);
+    let joueur = document.getElementById("joueur");
+
+    if(entity.attaque)
+      ctx.drawImage(joueur, 100, 0, entity.sizeX + 30, entity.sizeY, entity.x, entity.y, entity.sizeX + 30, entity.sizeY);
+    else
+      ctx.drawImage(joueur, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    //(img, source.x, source.y, source.width, source.height, dest.x, dest.y, dest.width, dest.height)
 
 }
 
@@ -86,8 +92,8 @@ Start = function(){
 
   if(etat == 0){
     ctx.clearRect(0,0,WIDTH,HEIGHT);
-    Entity( 375, 375, 100, 200, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
-    Entity(150, 375, 100, 200, 'booba', 15, 15, 'idBooba');
+    Entity( 375, 375, 100, 130, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+    Entity(150, 375, 100, 130, 'booba', 15, 15, 'idBooba');
     setInterval(Update,40);
     etat = 1;
   }

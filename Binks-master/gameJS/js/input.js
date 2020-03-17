@@ -23,6 +23,12 @@ document.onkeydown = function(event){
       break;
 
 
+    case 71:
+      //m
+      listeJoueurs['idBooba'].attaque = true;
+      break;
+
+
     case 90:
       //z
       listeJoueurs['idKaaris'].haut = true;
@@ -41,6 +47,12 @@ document.onkeydown = function(event){
     case 83:
       //s
       listeJoueurs['idKaaris'].bas = true;
+      break;
+
+
+    case 77:
+      //m
+      listeJoueurs['idKaaris'].attaque = true;
       break;
 
 
@@ -76,9 +88,9 @@ document.onkeyup = function(event){
       listeJoueurs['idBooba'].bas = false;
       break;
 
-    case 77:
+    case 71:
       //m
-      console.log("attaque joueur 2");
+      listeJoueurs['idBooba'].attaque = false;
       break;
 
 
@@ -99,9 +111,9 @@ document.onkeyup = function(event){
       listeJoueurs['idKaaris'].bas = false;
       break;
 
-    case 71:
-      //g
-      console.log("attaque joueur 1");
+    case 77:
+      //m
+      listeJoueurs['idKaaris'].attaque = false;
       break;
 
     }
