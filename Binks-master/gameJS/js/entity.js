@@ -24,6 +24,7 @@ Entity = function (x, y, sizeX, sizeY, nom, vitX, vitY, id){
     droite:false,
 
     attaque:false,
+    last:"droite",
 
   };
 
@@ -34,12 +35,23 @@ Entity = function (x, y, sizeX, sizeY, nom, vitX, vitY, id){
 //affichage des entités
 DrawEntity = function (entity){
 
+    let joueurGauche = document.getElementById("joueurGauche");
+    let joueurDroite = document.getElementById("joueurDroite");
     let joueur = document.getElementById("joueur");
 
-    if(entity.attaque)
-      ctx.drawImage(joueur, 100, 0, entity.sizeX + 30, entity.sizeY, entity.x, entity.y, entity.sizeX + 30, entity.sizeY);
-    else
-      ctx.drawImage(joueur, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    ctx.drawImage(joueur, entity.x, entity.y);
+
+    if(entity.attaque && entity.last == "droite")
+      ctx.drawImage(joueurDroite, 0, 0, entity.sizeX + 30, entity.sizeY, entity.x, entity.y, entity.sizeX + 30, entity.sizeY);
+    if(entity.attaque && entity.last == "gauche")
+      ctx.drawImage(joueurGauche, 100, 0, entity.sizeX + 30, entity.sizeY, entity.x, entity.y, entity.sizeX + 30, entity.sizeY);
+    if(entity.gauche)
+      ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    if(entity.droite)
+      ctx.drawImage(joueurDroite, 130, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+
+
+
     //(img, source.x, source.y, source.width, source.height, dest.x, dest.y, dest.width, dest.height)
 
 }

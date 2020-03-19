@@ -1,3 +1,10 @@
+//attaque
+/*
+CheckAttaque = function(){
+
+}
+*/
+
 //déplacements
 document.onkeydown = function(event){
 
@@ -10,24 +17,19 @@ document.onkeydown = function(event){
     case 37:
       //gauche
       listeJoueurs['idBooba'].gauche = true;
+      listeJoueurs['idBooba'].last = "gauche";
       break;
 
     case 39:
       //droite
       listeJoueurs['idBooba'].droite = true;
+      listeJoueurs['idBooba'].last = "droite";
       break;
 
     case 40:
       //bas
       listeJoueurs['idBooba'].bas = true;
       break;
-
-
-    case 71:
-      //m
-      listeJoueurs['idBooba'].attaque = true;
-      break;
-
 
     case 90:
       //z
@@ -37,22 +39,18 @@ document.onkeydown = function(event){
     case 68:
       //d
       listeJoueurs['idKaaris'].droite = true;
+      listeJoueurs['idKaaris'].last = "droite";
       break;
 
     case 81:
       //q
       listeJoueurs['idKaaris'].gauche = true;
+      listeJoueurs['idKaaris'].last = "gauche";
       break;
 
     case 83:
       //s
       listeJoueurs['idKaaris'].bas = true;
-      break;
-
-
-    case 77:
-      //m
-      listeJoueurs['idKaaris'].attaque = true;
       break;
 
 
@@ -88,12 +86,6 @@ document.onkeyup = function(event){
       listeJoueurs['idBooba'].bas = false;
       break;
 
-    case 71:
-      //m
-      listeJoueurs['idBooba'].attaque = false;
-      break;
-
-
     case 90:
       //z
       listeJoueurs['idKaaris'].haut = false;
@@ -111,10 +103,6 @@ document.onkeyup = function(event){
       listeJoueurs['idKaaris'].bas = false;
       break;
 
-    case 77:
-      //m
-      listeJoueurs['idKaaris'].attaque = false;
-      break;
 
     }
 }
