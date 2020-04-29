@@ -1,10 +1,3 @@
-//attaque
-/*
-CheckAttaque = function(){
-
-}
-*/
-
 //déplacements
 document.onkeydown = function(event){
 
@@ -51,6 +44,12 @@ document.onkeydown = function(event){
     case 83:
       //s
       listeJoueurs['idKaaris'].bas = true;
+      break;
+
+    case 71:
+      //g
+      listeJoueurs['idKaaris'].attaque = true;
+
       break;
 
 
@@ -101,6 +100,12 @@ document.onkeyup = function(event){
     case 83:
       //s
       listeJoueurs['idKaaris'].bas = false;
+      break;
+
+    case 71:
+      //g
+      listeJoueurs['idKaaris'].attaque = false;
+
       break;
 
 

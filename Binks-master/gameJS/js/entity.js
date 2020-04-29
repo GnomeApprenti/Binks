@@ -37,22 +37,27 @@ DrawEntity = function (entity){
 
     let joueurGauche = document.getElementById("joueurGauche");
     let joueurDroite = document.getElementById("joueurDroite");
-    let joueur = document.getElementById("joueur");
 
-    ctx.drawImage(joueur, entity.x, entity.y);
-
-    if(entity.attaque && entity.last == "droite")
-      ctx.drawImage(joueurDroite, 0, 0, entity.sizeX + 30, entity.sizeY, entity.x, entity.y, entity.sizeX + 30, entity.sizeY);
-    if(entity.attaque && entity.last == "gauche")
-      ctx.drawImage(joueurGauche, 100, 0, entity.sizeX + 30, entity.sizeY, entity.x, entity.y, entity.sizeX + 30, entity.sizeY);
-    if(entity.gauche)
+    if (entity.attaque == true){
+      AnimationAttaque(entity);
+    }
+    //immobile
+    if(entity.last == "droite" && !entity.droite && !entity.gauche)
+      ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    else if(entity.last == "gauche" && !entity.droite && !entity.gauche)
       ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
-    if(entity.droite)
-      ctx.drawImage(joueurDroite, 130, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
 
-
+    //mouvement
+    if(entity.gauche && !entity.droite)
+      ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    else if(entity.droite && !entity.gauche)
+      ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    else if(entity.gauche && entity.droite)
+      ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
 
     //(img, source.x, source.y, source.width, source.height, dest.x, dest.y, dest.width, dest.height)
+
+
 
 }
 
@@ -104,8 +109,8 @@ Start = function(){
 
   if(etat == 0){
     ctx.clearRect(0,0,WIDTH,HEIGHT);
-    Entity( 375, 375, 100, 130, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
-    Entity(150, 375, 100, 130, 'booba', 15, 15, 'idBooba');
+    Entity( 375, 375, 200, 200, 'kaaris', 15, 15, 'idKaaris'); //(x, y, sizeX, sizeY, nom, vitX, vitY, id)
+    Entity(150, 375, 200, 200, 'booba', 15, 15, 'idBooba');
     setInterval(Update,40);
     etat = 1;
   }
