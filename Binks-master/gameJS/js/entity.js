@@ -41,20 +41,21 @@ DrawEntity = function (entity){
     if (entity.attaque == true){
       AnimationAttaque(entity);
     }
-    //immobile
-    if(entity.last == "droite" && !entity.droite && !entity.gauche)
-      ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
-    else if(entity.last == "gauche" && !entity.droite && !entity.gauche)
-      ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    else{
+      //immobile
+      if(entity.last == "droite" && !entity.droite && !entity.gauche)
+        ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+      else if(entity.last == "gauche" && !entity.droite && !entity.gauche)
+        ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
 
-    //mouvement
-    if(entity.gauche && !entity.droite)
-      ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
-    else if(entity.droite && !entity.gauche)
-      ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
-    else if(entity.gauche && entity.droite)
-      ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
-
+      //mouvement
+      if(entity.gauche && !entity.droite)
+        ctx.drawImage(joueurGauche, 0, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+      else if(entity.droite && !entity.gauche)
+        ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+      else if(entity.gauche && entity.droite)
+        ctx.drawImage(joueurDroite, 200, 0, entity.sizeX, entity.sizeY, entity.x, entity.y, entity.sizeX, entity.sizeY);
+    }
     //(img, source.x, source.y, source.width, source.height, dest.x, dest.y, dest.width, dest.height)
 
 
@@ -95,11 +96,10 @@ UpdateEntity = function (entity){
 //update
 Update = function (){
 
-  ctx.clearRect(0,0,WIDTH,HEIGHT);
+  ctx.drawImage(background, 0, 0);
   for (var i in listeJoueurs){
     UpdateEntity(listeJoueurs[i]);
   }
-
   Pause();
 
 }
@@ -113,6 +113,7 @@ Start = function(){
     Entity(150, 375, 200, 200, 'booba', 15, 15, 'idBooba');
     setInterval(Update,40);
     etat = 1;
+    background = document.getElementById('background');
   }
 
 }

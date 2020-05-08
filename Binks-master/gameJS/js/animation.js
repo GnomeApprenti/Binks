@@ -2,21 +2,23 @@
 
 AnimationAttaque = function(entity){
   ctx.clearRect(entity.x, entity.y, entity.sizeX, entity.sizeY)
-  var imageArray = []; // array to hold images
-  let image = document.getElementById("attaque");
-  let image2 = document.getElementById("joueurDroite");
-  imageArray.push(image);
-  imageArray.push(image2);
+  var imageArray = [];
+  let image1 = document.getElementById("attaque1");
+  let image2 = document.getElementById("attaque2");
+  let image3 = document.getElementById("attaque3");
+  let image4 = document.getElementById("attaque4");
+  imageArray.push(image1, image2, image3, image4);
 
-  var millsecondsPerImage = 300;  // each frame is 100 ms 1/10th of a second
+  var millsecondsPerImage = 200;
 
-  var currentTime = new Date().valueOf(); // get the time in milliseconds
+  var currentTime = new Date().valueOf();
 
-  // Divide current time by how long to display for. Round down with floor
-  // then modulo the length of the image array
   var imageToDraw = imageArray[Math.floor(currentTime / millsecondsPerImage) % imageArray.length];
 
-  // draw the current image image
+
+  ctx.clearRect(entity.x, entity.y, entity.sizeX, entity.sizeY);
   ctx.drawImage(imageToDraw, entity.x, entity.y);
+
+
 
 }

@@ -1,4 +1,5 @@
 //déplacements
+
 document.onkeydown = function(event){
 
   switch(event.keyCode){
@@ -105,7 +106,6 @@ document.onkeyup = function(event){
     case 71:
       //g
       listeJoueurs['idKaaris'].attaque = false;
-
       break;
 
 
