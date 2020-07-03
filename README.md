@@ -1,5 +1,7 @@
 # Binks
-Site du Binks
+Music website to promote Lw1's work --- Made with HTML5, CSS3 and JavaScript
 
-Liste des tâches :
--Créer le mini jeu
+Contents : 
+-Various trap beats from Lw1
+-Dynamic progress bar 
+-Full control over the music using interactive JavaScript features
